@@ -15,35 +15,36 @@ export const json = {
         {
           "type": "boolean",
           "name": "Daily Dosis",
-          "title": "Day 1: Have you taken your daily dosis of Metformin",
-          "isRequired": true
+          "title": "Día 1: ¿Has tomado tu dosis diaria de Metformina?",
+          "isRequired": true,
+          "labelTrue": "Si"
         },
         {
           "type": "radiogroup",
           "name": "Missed Medications",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false",
-          "title": "Can you please specify why you have missed your medications? \n",
+          "title": "¿Puedes especificar por qué has dejado de tomar tus medicamentos?",
           "choices": [
             {
               "value": "Item 1",
-              "text": "Forgetfulness"
+              "text": "Olvido"
             },
             {
               "value": "Item 2",
-              "text": "Side effects"
+              "text": "Efectos secundarios"
             },
             {
               "value": "Item 3",
-              "text": "Financial constraints"
+              "text": "Limitaciones financieras"
             },
             {
               "value": "Item 5",
-              "text": "Medication timing"
+              "text": "Horario de medicación"
             },
             {
               "value": "Item 4",
-              "text": "Other"
+              "text": "Otro"
             }
           ]
         },
@@ -52,49 +53,52 @@ export const json = {
           "name": "Daily reminder missed medication",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false and {Missed Medications} = 'Item 1'",
-          "title": "Set a daily reminder?\n"
+          "title": "¿Configurar un recordatorio diario?",
+          "labelTrue": "Si"
         },
         {
           "type": "text",
           "name": "Other missed medications",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false and {Missed Medications} = 'Item 4'",
-          "title": "If Other, describe your reason:  "
+          "title": "Si es otro motivo, describe tu razón:"
         },
         {
           "type": "boolean",
           "name": "Financial assistance",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false and {Missed Medications} = 'Item 3'",
-          "title": "Have you considered applying for a financial assistance program?"
+          "title": "¿Has considerado solicitar un programa de asistencia financiera?",
+          "labelTrue": "Si"
         },
         {
           "type": "checkbox",
           "name": "Side effects",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false and {Missed Medications} = 'Item 2'",
-          "title": "Please specify the side effects\n",
+          "title": "Por favor, especifica los efectos secundarios",
           "choices": [
             {
               "value": "Item 1",
-              "text": "Nausea"
+              "text": "Náusea"
             },
             {
               "value": "Item 2",
-              "text": "Headache"
+              "text": "Dolor de cabeza"
             },
             {
               "value": "Item 3",
-              "text": "Weight gain"
+              "text": "Aumento de peso"
             },
             {
               "value": "Item 4",
-              "text": "Hypoglycemia"
+              "text": "Hipoglucemia"
             },
             {
               "value": "Item 5",
-              "text": "Allergic reactions"
+              "text": "Reacciones alérgicas"
             }
+           
           ]
         },
         {
@@ -102,28 +106,29 @@ export const json = {
           "name": "Ranking timing",
           "visible": false,
           "visibleIf": "{Daily Dosis} = false and {Missed Medications} = 'Item 5'",
-          "title": "Rank what time you would prefer to take your medication\n",
+          "title": "Por favor, clasifica en orden de preferencia a qué hora prefieres tomar tu medicación.",
           "choices": [
             {
               "value": "Item 1",
-              "text": "Midnight"
+              "text": "Medianoche"
             },
             {
               "value": "Item 2",
-              "text": "Lunch time"
+              "text": "Hora del almuerzo"
             },
             {
               "value": "Item 3",
-              "text": "Morning"
+              "text": "Mañana"
             },
             {
               "value": "Item 4",
-              "text": "Afternoon"
-            }
+              "text": "Tarde"
+            }            
           ]
         }
       ]
     }
   ],
-  "headerView": "advanced"
+  "headerView": "advanced",
+  "completeText": "Completar"
 };
